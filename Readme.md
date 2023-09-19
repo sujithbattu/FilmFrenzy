@@ -1,29 +1,18 @@
-![Xcode build](https://github.com/Dimillian/MovieSwiftUI/workflows/Xcode%20build/badge.svg?branch=master)
+# FilmFrenzy
 
-# MovieSwiftUI
+An immersive application built entirely in SwiftUI, FilmFrenzy showcases movies leveraging the MovieDB API. Designed to demonstrate the capabilities of SwiftUI and Combine, it is a continuous effort to push the boundaries of what's achievable with SwiftUI without reverting to UIKit.
 
-MovieSwiftUI is an application that uses the MovieDB API and is built with SwiftUI. 
-It demos some SwiftUI (& Combine) concepts. The goal is to make a real world application using SwiftUI only. It'll be updated with new features as they come to the SwiftUI framework. 
-
-I have written a series of articles that document the design and architecture of the app: [Making a Real World Application With SwiftUI](https://medium.com/better-programming/collection-making-a-real-world-application-with-swiftui-4f9bc8c7fb71).
-
-![App Image](images/MovieSwiftUI_promo_new.png?)
+## Core Principles
+- **Real-world Application**: The aim is to demonstrate how a practical application can be built using only SwiftUI, evolving with each update and addition to the framework.
+- **Pure SwiftUI**: No reliance on UIView/UIViewController representables, a testament to the depth of SwiftUI's capabilities.
 
 ## Architecture
 
-MovieSwiftUI data flow is a subset and a custom implementation of the Flux part of [Redux](https://redux.js.org/). 
-It implement the State in an [ObservableObject](https://developer.apple.com/documentation/combine/observableobject) as a @Published wrapped property, so changes are published whenever a dispatched action produces a new state after being reduced. 
-The state is injected as an environment object in the root view of the application, and is easily accessible anywhere in the application. 
-SwiftUI does all aspects of diffing on the render pass when your state changes. No need to be clever when extracting props from your State, they're simple dynamic vars at the view level. No matter your objects' graph size, SwiftUI speed depends on the complexity of your views hierarchy, not the complexity of your object graph.
+FilmFrenzy embraces a data flow inspired by the Flux segment of [Redux](https://redux.js.org/). The state, embedded as an [ObservableObject](https://developer.apple.com/documentation/combine/observableobject), publishes changes in response to dispatched actions. By injecting this state as an environment object at the root, it's effortlessly accessible application-wide.
 
-## SwiftUI
-
-MovieSwiftUI is in pure Swift UI, the goal is to see how far SwiftUI can go in its current implementation without using anything from UIKit (basically no UIView/UIViewController representable).
-
-It'll evolve with SwiftUI, every time Apple edits existing or adds new features to the framework.
+SwiftUI intelligently handles state changes, performing diffing during the render phase. The efficiency of SwiftUI hinges on the intricacy of the view hierarchy, sidelining the complexity of the object graph.
 
 ## Platforms
 
-Currently MovieSwiftUI runs on iPhone, iPad, and macOS. 
+FilmFrenzy is adaptable across iPhone, iPad, and macOS, demonstrating versatility and expansive reach.
 
-Follow me on [Twitter](https://twitter.com/dimillian) to get the latest update about features, code and SwiftUI tips and tricks! 
